@@ -295,18 +295,6 @@ switch($k[0]) {
 }
 $idval = trim($_GET[$k[0]]);
 $look = new $class($idval);
-if (file_exists( '/data/project/reftoolbar/log.txt')) {
-	$log = file_get_contents( '/data/project/reftoolbar/log.txt' );
-	$log = json_decode($log, true);
-	$logdate = date('Y-m-d');
-	if (isset($log[$k[0]][$logdate])) {
-		$log[$k[0]][$logdate]++;
-	} else {
-		$log[$k[0]][$logdate] = 1;
-	}
-	$log = json_encode($log);
-	file_put_contents('/data/project/reftoolbar/log.txt', $log);
-}
 $res = $look->getResult();
 if (isset($_GET['template'])) {
 	$template = $_GET['template'];
