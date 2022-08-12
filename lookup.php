@@ -57,7 +57,7 @@ class PMIDLookup {
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'Qiuwen/1.0a (refToolBar)');
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Qiuwen/1.1 (refToolBar)');
 		$xml = curl_exec($ch);
 		curl_close($ch);
 		libxml_use_internal_errors(true); // Suppress errors from invalid XML
