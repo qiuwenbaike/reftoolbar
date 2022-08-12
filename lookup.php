@@ -33,9 +33,9 @@ class PMIDLookup {
 	}
 
 	private function normalizeMonth( $monthString ) {
-		$months = array('Jan' => '01', 'Feb' => '02', 'Mar' => '03', 'Apr' => '04',
+		$months = ['Jan' => '01', 'Feb' => '02', 'Mar' => '03', 'Apr' => '04',
 			'May' => '05', 'Jun' => '06', 'Jul' => '07', 'Aug' => '08',
-			'Sep' => '09', 'Oct' => '10', 'Nov' => '11', 'Dec' => '12');
+			'Sep' => '09', 'Oct' => '10', 'Nov' => '11', 'Dec' => '12'];
 		// If the date covers multiple months (e.g. Jul-Aug), just take the first one
 		$monthPieces = explode('-', $monthString);
 		$month = $monthPieces[0];
@@ -47,7 +47,7 @@ class PMIDLookup {
 	}
 
 	public function getResult() {
-		$url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?';
+		$url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?';
 		$url .= "&db=pubmed";
 		$url .= '&tool=QiuwenRefToolbar2';
 		$url .= '&email=siteoperator@qiuwen.org';
@@ -142,7 +142,7 @@ class CitoidLookup {
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'Qiuwen/1.0a (refToolBar)');
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Qiuwen/1.1 (refToolBar)');
 		$json = curl_exec($ch);
 		curl_close($ch);
 		$data = json_decode($json, true);
