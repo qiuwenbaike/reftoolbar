@@ -139,7 +139,7 @@ class CitoidLookup {
 			$this->id = urlencode( $this->id );
 		}
 		// See https://www.mediawiki.org/wiki/Citoid
-		$url = "https://citoid.qiuwen.wiki/api?action=query&format=mediawiki&search=" . $this->id;
+		$url = "https://citoid.qiuwen.net.cn/api?action=query&format=mediawiki&search=" . $this->id;
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
