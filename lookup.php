@@ -1,6 +1,7 @@
 <?php
 /*
 	Copyright 2013 Alex Zaddach. (mrzmanwiki@gmail.com)
+	Copyright 2021 WaitSpring (me@waitspring.com) and other Qiuwen Baike contributors
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -49,7 +50,7 @@ class PMIDLookup {
 	public function getResult() {
 		$url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?';
 		$url .= "&db=pubmed";
-		$url .= '&tool=QiuwenRefToolbar2';
+		$url .= '&tool=Qiuwen-1.1-refToolBar';
 		$url .= '&email=siteoperator@qiuwen.org';
 		$url .= "&id={$this->id}";
 		$url .= '&retmode=xml';
